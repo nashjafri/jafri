@@ -1,51 +1,49 @@
 #' Lung Cancer Dataset
 #'
-#' A synthetic dataset of 23,658 lung cancer patients with detailed demographic, clinical,
-#' and laboratory information, intended for applied linear modeling and classification tasks.
+#' A synthetic dataset of 23,658 lung cancer patients with detailed demographic, clinical, comorbidity, and lab information, intended for applied linear modeling and classification tasks.
 #'
-#' @format A tibble with 23,658 rows and 38 variables:
+#' @usage data(lung)
+#'
+#' @format A tibble with 23,658 rows and 37 variables:
 #' \describe{
-#'   \item{Patient_ID}{Unique patient identifier}
-#'   \item{Age}{Age of the patient in years}
-#'   \item{Gender}{Gender of the patient: Male or Female}
-#'   \item{Smoking_History}{Smoking status: Never Smoked, Former Smoker, or Current Smoker}
-#'   \item{Tumor_Size_mm}{Tumor size in millimeters}
-#'   \item{Tumor_Location}{Location of the tumor within the lung}
-#'   \item{Stage}{Cancer stage: Stage I, II, III, or IV}
-#'   \item{Treatment}{Primary treatment type: Surgery, Chemotherapy, Radiation, etc.}
-#'   \item{Survival_Months}{Survival duration in months}
-#'   \item{Ethnicity}{Patient-reported ethnicity}
-#'   \item{Insurance_Type}{Type of insurance coverage}
-#'   \item{Family_History}{Whether the patient has a family history of lung cancer}
-#'   \item{Comorbidity_Diabetes}{1 if patient has diabetes, 0 otherwise}
-#'   \item{Comorbidity_Hypertension}{1 if patient has hypertension, 0 otherwise}
-#'   \item{Comorbidity_Heart_Disease}{1 if patient has heart disease, 0 otherwise}
-#'   \item{Comorbidity_Chronic_Lung_Disease}{1 if patient has chronic lung disease, 0 otherwise}
-#'   \item{Comorbidity_Kidney_Disease}{1 if patient has kidney disease, 0 otherwise}
-#'   \item{Comorbidity_Autoimmune_Disease}{1 if patient has autoimmune disease, 0 otherwise}
-#'   \item{Comorbidity_Other}{1 if patient has other comorbidities, 0 otherwise}
-#'   \item{Performance_Status}{Clinician-rated performance status (e.g., ECOG score)}
-#'   \item{Blood_Pressure_Systolic}{Systolic blood pressure in mmHg}
-#'   \item{Blood_Pressure_Diastolic}{Diastolic blood pressure in mmHg}
-#'   \item{Blood_Pressure_Pulse}{Pulse pressure in mmHg}
-#'   \item{Hemoglobin_Level}{Hemoglobin concentration (g/dL)}
-#'   \item{White_Blood_Cell_Count}{White blood cell count (10^9/L)}
-#'   \item{Platelet_Count}{Platelet count (10^9/L)}
-#'   \item{Albumin_Level}{Serum albumin level (g/dL)}
-#'   \item{Alkaline_Phosphatase_Level}{ALP level (U/L)}
-#'   \item{Alanine_Aminotransferase_Level}{ALT level (U/L)}
-#'   \item{Aspartate_Aminotransferase_Level}{AST level (U/L)}
-#'   \item{Creatinine_Level}{Serum creatinine level (mg/dL)}
-#'   \item{LDH_Level}{Lactate dehydrogenase level (U/L)}
-#'   \item{Calcium_Level}{Serum calcium level (mg/dL)}
-#'   \item{Phosphorus_Level}{Serum phosphorus level (mg/dL)}
-#'   \item{Glucose_Level}{Fasting blood glucose level (mg/dL)}
-#'   \item{Potassium_Level}{Serum potassium level (mmol/L)}
-#'   \item{Sodium_Level}{Serum sodium level (mmol/L)}
-#'   \item{Smoking_Pack_Years}{Estimated pack-years of smoking}
+#'   \item{age}{Numeric. Age of the patient in years.}
+#'   \item{gender}{Factor. Patient gender: "male", "female".}
+#'   \item{smoker}{Factor. Smoking history: "never", "former", "current".}
+#'   \item{size}{Numeric. Tumor size in millimeters.}
+#'   \item{location}{Factor. Tumor location in the lung (lobe): "upper", "middle", "lower".}
+#'   \item{stage}{Factor. Cancer stage: "stage1", "stage2", "stage3", "stage4".}
+#'   \item{treatment}{Factor. Primary treatment: "surgery", "chemo", "radio", "targeted".}
+#'   \item{months}{Numeric. Survival duration in months.}
+#'   \item{ethnicity}{Factor. Ethnic background: "caucasian", "african", "asian", "hispanic".}
+#'   \item{insurance}{Factor. Insurance type: "private", "medicare", "medicaid", "other".}
+#'   \item{history}{Factor. Family history of lung cancer: "yes", "no".}
+#'   \item{diabetes}{Factor. Comorbidity: diabetes ("yes", "no").}
+#'   \item{hypertension}{Factor. Comorbidity: hypertension ("yes", "no").}
+#'   \item{heart}{Factor. Comorbidity: heart disease ("yes", "no").}
+#'   \item{lungdis}{Factor. Comorbidity: chronic lung disease ("yes", "no").}
+#'   \item{kidney}{Factor. Comorbidity: kidney disease ("yes", "no").}
+#'   \item{autoimmune}{Factor. Comorbidity: autoimmune disease ("yes", "no").}
+#'   \item{othercomorb}{Factor. Comorbidity: other conditions ("yes", "no").}
+#'   \item{ecog}{Numeric. Eastern Cooperative Oncology Group (ECOG) performance score).}
+#'   \item{systolic}{Numeric. Systolic blood pressure in mmHg.}
+#'   \item{diastolic}{Numeric. Diastolic blood pressure in mmHg.}
+#'   \item{pulse}{Numeric. Pulse pressure in mmHg.}
+#'   \item{hemoglobin}{Numeric. Hemoglobin concentration (g/dL).}
+#'   \item{wbc}{Numeric. White blood cell count (10^9/L).}
+#'   \item{platelet}{Numeric. Platelet count (10^9/L).}
+#'   \item{albumin}{Numeric. Serum albumin level (g/dL).}
+#'   \item{alkphos}{Numeric. Alkaline phosphatase level (U/L).}
+#'   \item{alt}{Numeric. Alanine aminotransferase level (U/L).}
+#'   \item{ast}{Numeric. Aspartate aminotransferase level (U/L).}
+#'   \item{creatinine}{Numeric. Serum creatinine level (mg/dL).}
+#'   \item{ldh}{Numeric. Lactate dehydrogenase level (U/L).}
+#'   \item{calcium}{Numeric. Serum calcium level (mg/dL).}
+#'   \item{phosph}{Numeric. Serum phosphorus level (mg/dL).}
+#'   \item{glucose}{Numeric. Fasting blood glucose level (mg/dL).}
+#'   \item{potassium}{Numeric. Serum potassium level (mmol/L).}
+#'   \item{sodium}{Numeric. Serum sodium level (mmol/L).}
+#'   \item{packyears}{Numeric. Estimated smoking pack-years.}
 #' }
 #'
 #' @source Synthetic dataset adapted from Kaggle
-#'
-#' @usage data(lung)
 "lung"
